@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #1c1c1c;
+            color: #e0e0e0;
+        }
+
+        #counter {
+            font-size: 3rem;
+            background-color: #333;
+            color: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div id="counter">Loading...</div>
+
+    <script>
+        function updateCounter() {
+            const startTime = new Date("August 24, 2023 18:00:00").getTime();
+            const now = new Date().getTime();
+            const diff = now - startTime;
+
+            const seconds = Math.floor(diff / 1000);
+            const minutes = Math.floor(seconds / 60);
+            const hours = Math.floor(minutes / 60);
+            const days = Math.floor(hours / 24);
+
+            const displaySeconds = seconds % 60;
+            const displayMinutes = minutes % 60;
+            const displayHours = hours % 24;
+
+            document.getElementById("counter").innerHTML = 
+                `${days}d ${displayHours}h ${displayMinutes}m ${displaySeconds}s`;
+        }
+
+        setInterval(updateCounter, 1000);
+    </script>
+</body>
+</html>
