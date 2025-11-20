@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>i love you shannon</title>
+    <title>i miss you</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -18,8 +18,8 @@
 
         #counter {
             font-size: 3rem;
-            background-color: #333;
-            color: #f0f0f0;
+            background-color: #2a2a2a;
+            color: #666;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
@@ -30,10 +30,10 @@
     <div id="counter">Loading...</div>
 
     <script>
-        function updateCounter() {
+        function displayCounter() {
             const startTime = new Date("August 24, 2023 18:00:00").getTime();
-            const now = new Date().getTime();
-            const diff = now - startTime;
+            const endTime = new Date("November 10, 2025 21:03:00").getTime();
+            const diff = endTime - startTime;
 
             const seconds = Math.floor(diff / 1000);
             const minutes = Math.floor(seconds / 60);
@@ -48,7 +48,7 @@
                 `${days}d ${displayHours}h ${displayMinutes}m ${displaySeconds}s`;
         }
 
-        setInterval(updateCounter, 1000);
+        displayCounter();
     </script>
 </body>
 </html>
